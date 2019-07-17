@@ -13,64 +13,22 @@ export default props => (
     }}
   >
     <Particles
-      // params={{
-      //   particles: {
-      //     number: {
-      //       value: 120
-      //     },
-      //     size: {
-      //       value: 4
-      //     }
-      //   },
-      //   interactivity: {
-      //     detect_on: "window",
-      //     events: {
-      //       onhover: {
-      //         enable: true,
-      //         mode: "repulse"
-      //       },
-      //       onclick: {
-      //         enable: true,
-      //         mode: "bubble"
-      //       }
-      //     },
-      //     modes: {
-      //       grab: {
-      //         distance: 400,
-      //         line_linked: {
-      //           opacity: 1
-      //         }
-      //       },
-      //       bubble: {
-      //         distance: 220,
-      //         duration: 0.5,
-      //         size: 100,
-      //         opacity: 0.8
-      //       },
-      //       repulse: {
-      //         size: 100,
-      //         distance: 160,
-      //         duration: 14
-      //       },
-      //       push: {
-      //         particles_nb: 14
-      //       },
-      //       remove: {
-      //         particles_nb: 12
-      //       }
-      //     }
-      //   }
-      // }}
-
       params={
         props.web
           ? {
               particles: {
+                color: {
+                  value: ["#858585"]
+                },
                 number: {
                   value: 120
                 },
                 size: {
                   value: 4
+                },
+                line_linked: {
+                  color: "#fbbc17",
+                  opacity: 1
                 }
               },
               interactivity: {
@@ -81,7 +39,7 @@ export default props => (
                     mode: "repulse"
                   },
                   onclick: {
-                    enable: true,
+                    enable: false,
                     mode: "bubble"
                   }
                 },

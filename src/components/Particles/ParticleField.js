@@ -28,7 +28,7 @@ export default props => {
     },
     particles: {
       colorMode: "solid",
-      color: "#ffffff",
+      color: "#000",
       transparency: 0.9,
       shape: "circle",
       boundingBox: "canvas",

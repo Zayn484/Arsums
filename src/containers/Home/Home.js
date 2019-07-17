@@ -1,5 +1,8 @@
 import React from "react";
 import "./Home.css";
+import Fade from "react-reveal/Fade";
+import Brand from "../../assets/images/brand.png";
+import Logo from "../../assets/images/logo.png";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import Particles from "../../components/Particles/Particles";
 import ParticleField from "../../components/Particles/ParticleField";
@@ -8,8 +11,24 @@ import Orbit from "../../components/Orbit/Orbit";
 
 class Home extends React.Component {
   state = {
+    scrolling: false,
     toolbarOpen: false,
-    effect: "snow"
+    effect: "web"
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = event => {
+    if (window.scrollY === 0 && this.state.scrolling === true) {
+      this.setState({ scrolling: false });
+    } else if (window.scrollY !== 0 && this.state.scrolling !== true) {
+      this.setState({ scrolling: true });
+    }
   };
 
   toggleToolbar = () => {
@@ -49,95 +68,129 @@ class Home extends React.Component {
     }
     return (
       <main>
-        <div className="Home">
+        <section className="Cover ">
           {effect}
-          {/* <Orbit onClick={this.click} /> */}
-          {/* <div class="p-5 orbit">
-            <div class="row  justify-content-center align-items-center">
-              <div className="col-12">
-                <Orbit onClick={this.click} />
-              </div>
-            </div>
-          </div> */}
-
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "auto",
-              height: "auto",
-              zIndex: 999
-            }}
+          <nav
+            className={
+              !this.state.scrolling
+                ? "navbar navbar-expand-lg  p-2 Navbar"
+                : "navbar navbar-expand-lg  p-2  Navbar-Scroll"
+            }
           >
-            <div className="menu" onClick={this.toggleToolbar}>
-              <i
-                className="fas fa-bars fa-3x text-white"
-                style={{ color: "white" }}
-              />
+            <Fade left>
+              <div className="col-sm-2  col-md-1 col-1 Logo">
+                <img src={Brand} className="img-fluid " alt="logo" />
+              </div>
+              <div
+                className={
+                  !this.state.scrolling
+                    ? "col-sm-4 col-md-2 col-2 Logo"
+                    : "col-sm-4 col-md-2 col-2 Logo-Scroll"
+                }
+              >
+                <img src={Logo} className="img-fluid " alt="logo" />
+              </div>
+            </Fade>
+            <button
+              className="navbar-toggler text-danger"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon text-danger" />
+              Menu
+            </button>
+            <div
+              className="collapse navbar-collapse justify-content-end Nav-Container"
+              id="navbarNav"
+            >
+              <ul className="navbar-nav ">
+                <li className="nav-item active ">
+                  <a className="nav-link " href="#">
+                    Home <span className="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Expertise
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    About Us
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Pricing
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Careers
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Our Team
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Contact Us
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Schedule a Call
+                  </a>
+                </li>
+              </ul>
             </div>
-            <Toolbar open={this.state.toolbarOpen} close={this.toggleToolbar} />
-
-            {/*  render <Route> and <NavTabs /> here */}
-          </div>
-          <div className="landing-intro  p-5">
-            <h1 className="text-white">Landing Page</h1>
-            <h3 className="text-secondary">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry
-            </h3>
-            <br />
-            <div className="text-center">
-              <button
-                className="btn btn-default m-5 "
-                onClick={() => this.changeEffect("snow")}
-              >
-                Snow
-              </button>
-              <button
-                className="btn btn-default m-5"
-                onClick={() => this.changeEffect("web")}
-              >
-                Web Particles
-              </button>
-              <button
-                className="btn btn-default m-5"
-                onClick={() => this.changeEffect("bubbles")}
-              >
-                Bubbles
-              </button>
-              <button
-                className="btn btn-default m-5"
-                onClick={() => this.changeEffect("triangles")}
-              >
-                Triangles
-              </button>
-              <button
-                className="btn btn-default m-5"
-                onClick={() => this.changeEffect("waterwave")}
-              >
-                Water Wave
-              </button>
-            </div>
-          </div>
-        </div>
-        {/* <div className="section container-fluid p-0 bg-secondary  p-5">
-          <div className="overview p-2">
-            <h1>Some heading text</h1>
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using 'Content here,
-              content here', making it look like readable English. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
-              their default model text, and a search for 'lorem ipsum' will
-              uncover many web sites still in their infancy. Various versions
-              have evolved over the years, sometimes by accident, sometimes on
-              purpose (injected humour and the like).
-            </p>
-          </div>
-        </div> */}
+          </nav>
+        </section>
+        <section>
+          <h1 className="text-center">How we do it!</h1>
+          <p className="p-5">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
+          </p>
+          <p className="p-5">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
+          </p>
+          <p className="p-5">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
+          </p>
+        </section>
       </main>
     );
   }
