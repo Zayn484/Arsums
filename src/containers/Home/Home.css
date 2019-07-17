@@ -1,0 +1,51 @@
+.Home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgb(17, 17, 17);
+  /* background-color: rgb(209, 209, 209);
+    position: "absolute";
+    top: 0;
+    left: 0;
+    width: "100%";
+    height: "100%"; */
+}
+
+.menu {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.section {
+  position: relative;
+}
+
+.landing-intro {
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 50px;
+  z-index: 0;
+}
+
+.orbit {
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 50px;
+}
+
+.overview {
+  width: 100%;
+  height: auto;
+  background-color: #eee;
+  transform: skewY(2deg);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
