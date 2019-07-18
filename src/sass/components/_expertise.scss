@@ -1,0 +1,38 @@
+.Expertise {
+	margin-top: -1rem;
+	z-index: 0 !important;
+	background-color: #f2f4f7;
+	transform: skewY(-1.5deg);
+
+	& > div > .Heading {
+		border-bottom: 1px solid $color-primary;
+		border-width: thin;
+	}
+
+	& > div {
+		padding: 4rem;
+		transform: skewY(1.5deg);
+
+		& > div {
+			margin: 2rem;
+		}
+	}
+
+	& > div > div > .Card {
+		margin: 2rem;
+
+		& div {
+			margin: 1rem;
+			border-radius: 20px;
+			background-color: #f2f4f7;
+			padding: 1px;
+
+			& h4 {
+			}
+		}
+
+		& ul {
+			list-style-type: none;
+		}
+	}
+}

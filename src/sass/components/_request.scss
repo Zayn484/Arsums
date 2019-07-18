@@ -1,0 +1,38 @@
+.Request {
+	margin-top: -1.5rem;
+	z-index: 0 !important;
+	background-color: #f6f9fb;
+	transform: skewY(-1.5deg);
+
+	& > div > .Heading {
+		border-bottom: 1px solid $color-primary;
+		border-width: thin;
+	}
+
+	& > div {
+		padding: 4rem;
+		transform: skewY(1.5deg);
+
+		& > div {
+			margin: 2rem;
+		}
+	}
+}
+
+.Input-Group {
+	margin-left: 1.5rem;
+
+	& > div {
+		padding: 1rem;
+	}
+
+	& > div > label > span {
+		font-size: 1.2rem;
+	}
+
+	& > .Input {
+		border-left: 0;
+		border-top: 0;
+		border-right: 0;
+	}
+}

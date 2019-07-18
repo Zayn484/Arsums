@@ -1,0 +1,13 @@
+.Hiring {
+	z-index: 0 !important;
+	background-color: white;
+	transform: skewY(-1.5deg);
+
+	& > div {
+		padding: 4rem;
+		transform: skewY(1.5deg);
+		& p {
+			font-size: 22px;
+		}
+	}
+}

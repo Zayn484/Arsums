@@ -1,0 +1,99 @@
+.Cover {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+
+.Navbar {
+	z-index: 999;
+
+	position: fixed;
+	background-color: transparent;
+	transition: 0.5s;
+}
+
+.Navbar-Scroll {
+	position: fixed;
+	background-color: white;
+	-webkit-box-shadow: 1px 2px 3px 3px #eee;
+	-moz-box-shadow: 1px 2px 3px 3px #eee;
+	box-shadow: 1px 2px 3px 3px #eee;
+	transition: 0.5s;
+}
+
+.Logo {
+	opacity: 1;
+	transition: visibility 0s, opacity 0.2s linear;
+}
+
+.Logo-Scroll {
+	opacity: 0;
+	transition: visibility 0s, opacity 0.2s linear;
+}
+
+.Nav-Container ul li a {
+	margin: 1rem;
+	color: #606161;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+
+.Nav-Container ul li a:hover,
+.Nav-Container ul li a:active {
+	color: #fbbc17;
+}
+
+/* #fbbc17 */
+
+.Home {
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	background: rgb(255, 255, 255);
+	/* background-color: rgb(209, 209, 209);
+    position: "absolute";
+    top: 0;
+    left: 0;
+    width: "100%";
+    height: "100%"; */
+}
+
+.menu {
+	cursor: pointer;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+
+.section {
+	position: relative;
+}
+
+.landing-intro {
+	position: absolute;
+	margin-top: 150px;
+	margin-left: 50px;
+	z-index: 0;
+}
+
+.orbit {
+	position: absolute;
+	margin-top: 90px;
+	margin-left: 50px;
+}
+
+.overview {
+	width: 100%;
+	height: auto;
+	background-color: #eee;
+	transform: skewY(2deg);
+}
+
+@keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
