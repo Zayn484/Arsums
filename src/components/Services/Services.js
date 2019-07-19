@@ -1,6 +1,5 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
-import BackgroundImage from 'react-background-image';
+
 import PlaceHolder from '../../assets/1.jpg';
 import Image2 from '../../assets/3.jpg';
 
@@ -33,7 +32,7 @@ class Services extends React.Component {
 							src={this.state.image}
 							style={{ backgroundImage: `url(${this.state.image})` }}
 							className="img-fluid Image"
-							alt="image"
+							alt="cover"
 						/>
 						<div className="Headings ">
 							<h4 className="text-muted">What We Do</h4>

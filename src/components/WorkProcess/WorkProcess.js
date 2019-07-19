@@ -20,7 +20,7 @@ const workProcess = (props) => (
 							<h1 className="text-muted">1</h1>
 						</div>
 						<div className="col-4 p-0 ">
-							<img src={MeetingImage} className="img-fluid w-100 " alt="image" />
+							<img src={MeetingImage} className="img-fluid w-100 " alt="meeting" />
 						</div>
 					</div>
 					<h4>Meeting & Listening</h4>
@@ -34,7 +34,7 @@ const workProcess = (props) => (
 							<h1 className="text-muted">2</h1>
 						</div>
 						<div className="col-4 p-0 ">
-							<img src={DesignImage} className="img-fluid  w-100" alt="image" />
+							<img src={DesignImage} className="img-fluid  w-100" alt="design" />
 						</div>
 					</div>
 					<h4>Design</h4>
@@ -49,7 +49,7 @@ const workProcess = (props) => (
 							<h1 className="text-muted">3</h1>
 						</div>
 						<div className="col-4 p-0  ">
-							<img src={ValidationImage} className="img-fluid  w-100" alt="image" />
+							<img src={ValidationImage} className="img-fluid  w-100" alt="validation" />
 						</div>
 					</div>
 					<h4>Validation</h4>
@@ -64,7 +64,7 @@ const workProcess = (props) => (
 							<h1 className="text-muted">4</h1>
 						</div>
 						<div className="col-4 p-0  ">
-							<img src={CodingImage} className="img-fluid  w-100" alt="image" />
+							<img src={CodingImage} className="img-fluid  w-100" alt="coding" />
 						</div>
 					</div>
 					<h4>Coding</h4>
@@ -79,7 +79,7 @@ const workProcess = (props) => (
 							<h1 className="text-muted">5</h1>
 						</div>
 						<div className="col-4 p-0 ">
-							<img src={LaunchImage} className="img-fluid  w-100" alt="image" />
+							<img src={LaunchImage} className="img-fluid  w-100" alt="launch" />
 						</div>
 					</div>
 					<h4>Launch</h4>
@@ -94,7 +94,7 @@ const workProcess = (props) => (
 							<h1 className="text-muted">6</h1>
 						</div>
 						<div className="col-4 p-0 ">
-							<img src={MaintainImage} className="img-fluid w-100" alt="image" />
+							<img src={MaintainImage} className="img-fluid w-100" alt="maintain" />
 						</div>
 					</div>
 					<h4>Maintain</h4>
@@ -103,56 +103,6 @@ const workProcess = (props) => (
 						maintenance and design updates whenever they need
 					</p>
 				</div>
-				{/* <div className="col-sm-10 col-md-4 p-1 ">
-					<h1 className="text-muted">
-						2<img src={DesignImage} className="img-fluid" alt="image" />
-					</h1>
-					<h3>Design</h3>
-					<p>
-						We master Photoshop & Sketch. Will prepare the wireframes, design book, mockups, logos, banners
-						and all the visual materials
-					</p>
-				</div>
-				<div className="col-sm-10 col-md-4 p-1">
-					<h1 className="text-muted">
-						3<img src={ValidationImage} className="img-fluid" alt="image" />
-					</h1>
-					<h4>Validation</h4>
-					<p>
-						Next phase is to get your validation. When all is cool, you will approve the visual identity,
-						concept, styles, colors
-					</p>
-				</div>
-				<div className="col-sm-10 col-md-4 p-1 ">
-					<h1 className="text-muted">
-						4<img src={CodingImage} className="img-fluid" alt="image" />
-					</h1>
-					<h4>Coding</h4>
-					<p>
-						And here we start the development process, in a SCRUM environment with frequent updates on the
-						progress from our side
-					</p>
-				</div>
-				<div className="col-sm-10 col-md-4 p-1 ">
-					<h1 className="text-muted">
-						5<img src={LaunchImage} className="img-fluid" alt="image" />
-					</h1>
-					<h4>Launch</h4>
-					<p>
-						We will take care of the whole technical launch, prepare the environment so that you enjoy the
-						launch as easy as a Facebook like
-					</p>
-				</div>
-				<div className="col-sm-10 col-md-4 p-1">
-					<h1 className="text-muted">
-						6<img src={MaintainImage} className="img-fluid" alt="image" />
-					</h1>
-					<h4>Maintain</h4>
-					<p>
-						After this beautiful journey 93% of all our clients give us their websites for the tech
-						maintenance and design updates whenever they need
-					</p>
-				</div> */}
 			</div>
 		</div>
 	</section>

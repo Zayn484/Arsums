@@ -1,26 +1,27 @@
 import React from 'react';
 
-import Fade from 'react-reveal/Fade';
 import Bounce from 'react-reveal/Bounce';
-import Brand from '../../assets/images/brand.png';
-import Logo from '../../assets/images/logo.png';
+
 import Slogan from '../../assets/slogan.png';
-import Toolbar from '../../components/Toolbar/Toolbar';
+
 import Particles from '../../components/Particles/Particles';
 import ParticleField from '../../components/Particles/ParticleField';
 import WaterWave from '../../components/Waterwave/Waterwave';
-import Orbit from '../../components/Orbit/Orbit';
+
 import WorkProcess from '../../components/WorkProcess/WorkProcess';
 import Services from '../../components/Services/Services';
 import Request from '../../components/Request/Request';
 import Expertise from '../../components/Expertise/Expertise';
 import Hiring from '../../components/Hiring/Hiring';
+import ContactUs from '../../components/ContactUs/ContactUs';
 
 class Home extends React.Component {
 	state = {
 		scrolling: false,
 		toolbarOpen: false,
-		effect: 'web'
+		effect: 'web',
+		loading: false,
+		visible: false
 	};
 
 	componentDidMount() {
@@ -50,6 +51,23 @@ class Home extends React.Component {
 		this.setState({ effect: effect });
 	};
 
+	showModal = () => {
+		this.setState({
+			visible: true
+		});
+	};
+
+	handleOk = () => {
+		this.setState({ loading: true });
+		setTimeout(() => {
+			this.setState({ loading: false, visible: false });
+		}, 1000);
+	};
+
+	handleCancel = () => {
+		this.setState({ visible: false });
+	};
+
 	render() {
 		let effect = null;
 
@@ -77,83 +95,9 @@ class Home extends React.Component {
 			<main>
 				<section className="Cover ">
 					{effect}
-					<nav
-						className={
-							!this.state.scrolling ? (
-								'navbar navbar-expand-lg  p-2 Navbar'
-							) : (
-								'navbar navbar-expand-lg  p-2  Navbar-Scroll'
-							)
-						}
-					>
-						<Fade left>
-							<div className="col-sm-2  col-md-1 col-1 Logo">
-								<img src={Brand} className="img-fluid " alt="logo" />
-							</div>
-							<div
-								className={
-									!this.state.scrolling ? (
-										'col-sm-4 col-md-2 col-2 Logo'
-									) : (
-										'col-sm-4 col-md-2 col-2 Logo-Scroll'
-									)
-								}
-							>
-								<img src={Logo} className="img-fluid " alt="logo" />
-							</div>
-						</Fade>
-						<button
-							className="navbar-toggler text-danger"
-							type="button"
-							data-toggle="collapse"
-							data-target="#navbarNav"
-							aria-controls="navbarNav"
-							aria-expanded="false"
-							aria-label="Toggle navigation"
-						>
-							<span className="navbar-toggler-icon text-danger" />
-							Menu
-						</button>
-						<div className="collapse navbar-collapse justify-content-end Nav-Container" id="navbarNav">
-							<ul className="navbar-nav ">
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										About Us
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Expertise
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Our Team
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Pricing
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Careers
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Contact Us
-									</a>
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="#">
-										Schedule a Call
-									</a>
-								</li>
-							</ul>
-						</div>
-					</nav>
+
+					{/* <Navbar scrolling={this.state.scrolling} showModal={this.showModal} /> */}
+
 					{!this.state.scrolling && (
 						<div className="container d-flex h-100">
 							<Bounce>
@@ -169,6 +113,7 @@ class Home extends React.Component {
 				<Request />
 				<Expertise />
 				<Hiring />
+				<ContactUs />
 			</main>
 		);
 	}

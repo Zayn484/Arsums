@@ -1,5 +1,5 @@
 import React from 'react';
-import { Timeline, Icon, Radio, Input } from 'antd';
+import { Timeline, Radio, Input } from 'antd';
 import Button from '../Button/Button';
 
 const { TextArea } = Input;
