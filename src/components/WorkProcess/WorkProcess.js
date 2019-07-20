@@ -25,7 +25,9 @@ const workProcess = (props) => (
 					</div>
 					<h4>Meeting & Listening</h4>
 					<p>
-						First, we will have a meeting and listen to your wishes and needs. What you want to get from us
+						First, we will listen to YOU, your requirements and needs. The core of every new project is
+						great communication. While we’re sharing our expertise, we dig deep into your goals and
+						aspirations to make sure we can turn them into reality.
 					</p>
 				</div>
 				<div className="col-sm-10 col-md-4 p-1  ">
@@ -39,8 +41,9 @@ const workProcess = (props) => (
 					</div>
 					<h4>Design</h4>
 					<p>
-						We master Photoshop & Sketch. Will prepare the wireframes, design book, mockups, logos, banners
-						and all the visual materials
+						We make look, feel and function combine in a bespoke solution designed to communicate
+						effectively and work perfectly. Designing team then makes wireframes, UI/UX, prototypes, design
+						book, designs, logos, banners and all visual material. We master the art of designing.
 					</p>
 				</div>
 				<div className="col-sm-10 col-md-4 p-1  ">
@@ -54,8 +57,8 @@ const workProcess = (props) => (
 					</div>
 					<h4>Validation</h4>
 					<p>
-						Next phase is to get your validation. When all is cool, you will approve the visual identity,
-						concept, styles, colors
+						The next phase is to get your confirmation. If everything is cool and according to your
+						requirement, you give an ok for the visual identity, the concept, the styles and the colors.
 					</p>
 				</div>
 				<div className="col-sm-10 col-md-4 p-1  ">
@@ -69,8 +72,9 @@ const workProcess = (props) => (
 					</div>
 					<h4>Coding</h4>
 					<p>
-						And here we start the development process, in a SCRUM environment with frequent updates on the
-						progress from our side
+						And here we start the programming process in a SCRUM environment with timely updates on the
+						progress from our side. Working hand-in-hand with the design team, we use the best and latest
+						web thinking to make sure your site is a joy to use on laptop, desktop, mobile or tablet.
 					</p>
 				</div>
 				<div className="col-sm-10 col-md-4 p-1  ">
@@ -84,8 +88,11 @@ const workProcess = (props) => (
 					</div>
 					<h4>Launch</h4>
 					<p>
-						We will take care of the whole technical launch, prepare the environment so that you enjoy the
-						launch as easy as a Facebook like
+						We'll take care of the entire technical launch, and prepare the environment so you can enjoy
+						starting your site easily. Once everything is working perfectly we’ll be with you at launch.
+						We'll take care of the entire technical launch, and prepare the environment so you can enjoy
+						starting your site easily. Our passion and dedication keeps us on your team long after with
+						excellent aftercare.
 					</p>
 				</div>
 				<div className="col-sm-10 col-md-4 p-1  ">
@@ -97,10 +104,10 @@ const workProcess = (props) => (
 							<img src={MaintainImage} className="img-fluid w-100" alt="maintain" />
 						</div>
 					</div>
-					<h4>Maintain</h4>
+					<h4>Maintenance</h4>
 					<p>
-						After this beautiful journey 93% of all our clients give us their websites for the tech
-						maintenance and design updates whenever they need
+						After a simple process of cooperation, 99% of our customers entrust us with the technical
+						maintenance of their website. The design updates are made as needed.
 					</p>
 				</div>
 			</div>

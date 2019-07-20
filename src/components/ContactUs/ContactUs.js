@@ -11,7 +11,7 @@ const style = {
 };
 
 const contactUs = (props) => (
-	<section className="container-fluid Contact-Us">
+	<section className="container-fluid Contact-Us" id="Contact-Us">
 		<div className="container">
 			<div className="row ">
 				<div className="col-sm-12 col-md-6 Form">

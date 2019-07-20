@@ -1,24 +1,29 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-router-dom';
-import Brand from '../../assets/images/brand.png';
+// import Scroll from 'react-scroll';
+
 import Logo from '../../assets/images/logo.png';
+
+// const ScrollLink = Scroll.Link;
 
 const navbar = (props) => (
 	<nav
 		className={
-			!props.scrolling ? 'navbar navbar-expand-lg  p-2 Navbar' : 'navbar navbar-expand-lg  p-2  Navbar-Scroll'
+			!props.scrolling ? (
+				'navbar navbar-expand-lg  p-2 Navbar col-12'
+			) : (
+				'navbar navbar-expand-lg  p-2  Navbar-Scroll col-12'
+			)
 		}
 	>
 		<Fade left>
-			<div className="col-sm-2  col-md-1 col-1 Logo">
+			<div
+				className={!props.scrolling ? 'col-sm-4 col-md-2 col-2 Logo  ' : 'col-sm-4 col-md-2 col-2 Logo-Scroll'}
+			>
 				<Link to="/">
-					<img src={Brand} className="img-fluid " alt="logo" />
+					<img src={Logo} className="img-fluid " style={{ height: '5rem' }} alt="logo" />
 				</Link>
-			</div>
-
-			<div className={!props.scrolling ? 'col-sm-4 col-md-2 col-2 Logo' : 'col-sm-4 col-md-2 col-2 Logo-Scroll'}>
-				<img src={Logo} className="img-fluid " alt="logo" />
 			</div>
 		</Fade>
 		<button
@@ -41,26 +46,16 @@ const navbar = (props) => (
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="/about-us" className="nav-link">
+					<Link to="/expertise" className="nav-link">
 						Expertise
 					</Link>
 				</li>
 				<li className="nav-item">
-					<Link to="/about-us" className="nav-link">
-						Our Team
+					<Link to="/portfolio" className="nav-link">
+						Portfolio
 					</Link>
 				</li>
 
-				<li className="nav-item">
-					<Link to="/about-us" className="nav-link">
-						Careers
-					</Link>
-				</li>
-				<li className="nav-item">
-					<Link to="/about-us" className="nav-link">
-						Contact Us
-					</Link>
-				</li>
 				<li className="nav-item">
 					<Link to={props.location} className="nav-link" onClick={props.showModal}>
 						Schedule a Call

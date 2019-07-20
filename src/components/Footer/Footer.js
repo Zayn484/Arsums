@@ -1,14 +1,16 @@
 import React from 'react';
 
 const footer = (props) => (
-	<footer className="footer-distributed">
+	<footer className="container-fluid footer-distributed">
 		<div className="footer-left">
 			<h3>Arsums Tech</h3>
 
 			<p className="footer-company-name">Arsums &copy; 2019</p>
 		</div>
 
-		<div className="footer-center">
+		<div className="footer-center ml-auto" />
+
+		<div className="footer-right text-white">
 			<div>
 				<i className="fa fa-map-marker" />
 				<p>
@@ -27,14 +29,6 @@ const footer = (props) => (
 					<a href="mailto:support@company.com">info@arsums.com</a>
 				</p>
 			</div>
-		</div>
-
-		<div className="footer-right">
-			<p className="footer-company-about">
-				<span>About the company</span>
-				Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-				vehicula sit amet.
-			</p>
 		</div>
 	</footer>
 );

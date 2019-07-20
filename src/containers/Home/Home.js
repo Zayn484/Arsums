@@ -11,7 +11,7 @@ import WaterWave from '../../components/Waterwave/Waterwave';
 import WorkProcess from '../../components/WorkProcess/WorkProcess';
 import Services from '../../components/Services/Services';
 import Request from '../../components/Request/Request';
-import Expertise from '../../components/Expertise/Expertise';
+
 import Hiring from '../../components/Hiring/Hiring';
 import ContactUs from '../../components/ContactUs/ContactUs';
 
@@ -25,6 +25,7 @@ class Home extends React.Component {
 	};
 
 	componentDidMount() {
+		document.title = 'Arsums - Digital Agency';
 		window.addEventListener('scroll', this.handleScroll);
 	}
 	componentWillUnmount() {
@@ -43,9 +44,7 @@ class Home extends React.Component {
 		this.setState({ toolbarOpen: !this.state.toolbarOpen });
 	};
 
-	click(e) {
-		console.log('_onMouseMove');
-	}
+	click(e) {}
 
 	changeEffect = (effect) => {
 		this.setState({ effect: effect });
@@ -96,13 +95,16 @@ class Home extends React.Component {
 				<section className="Cover ">
 					{effect}
 
-					{/* <Navbar scrolling={this.state.scrolling} showModal={this.showModal} /> */}
-
 					{!this.state.scrolling && (
 						<div className="container d-flex h-100">
 							<Bounce>
-								<div className="justify-content-center align-self-center">
-									<img src={Slogan} className="img-fluid " alt="logo" />
+								<div
+									style={{ marginLeft: '80px' }}
+									className="justify-content-center  align-self-center"
+								>
+									<h1 style={{ fontSize: '72px', color: '#606161' }} className="text-center ">
+										CREATING RELEVANCE IN A CONNECTED WORLD
+									</h1>
 								</div>
 							</Bounce>
 						</div>
@@ -111,7 +113,7 @@ class Home extends React.Component {
 				<WorkProcess />
 				<Services />
 				<Request />
-				<Expertise />
+
 				<Hiring />
 				<ContactUs />
 			</main>

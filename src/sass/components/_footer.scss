@@ -5,9 +5,8 @@
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-
+	margin-top: -1.5rem;
 	padding: 55px 50px;
-	margin-top: 80px;
 }
 
 .footer-distributed .footer-left,
@@ -161,5 +160,11 @@
 
 	.footer-distributed .footer-center i {
 		margin-left: 0;
+	}
+}
+
+@media (max-width: 760px) {
+	.footer-distributed {
+		margin-top: 35rem;
 	}
 }
