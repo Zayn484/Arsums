@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { withRouter } from 'react-router-dom';
 import Branding from '../../assets/images/sliders/branding.jpg';
 import Website from '../../assets/images/sliders/website.jpg';
 import App from '../../assets/images/sliders/app.jpg';
@@ -7,14 +8,17 @@ import Ecommerce from '../../assets/images/sliders/ecommerce.jpg';
 import Marketing from '../../assets/images/sliders/marketing.jpg';
 
 class Services extends React.Component {
-	state = {
-		image: Branding
-	};
+	componentDidMount() {
+		this.image = Website;
+	}
 
 	changeImage = (image) => {
-		setTimeout(() => {
-			this.setState({ image: image });
-		}, 200);
+		this.image = image;
+		this.forceUpdate();
+	};
+
+	openPage = (id) => {
+		this.props.history.push({ pathname: '/expertise/' + id });
 	};
 
 	render() {
@@ -22,28 +26,39 @@ class Services extends React.Component {
 			<section className="container-fluid Services p-0 ">
 				<div className="row">
 					<div className="col-12">
-						{/* <BackgroundImage src={this.state.image} className="img-fluid Image">
-							<div className="Headings ">
-								<h1 onMouseOver={() => this.changeImage(PlaceHolder)}>Brading & Identity</h1>
-								<h1 onMouseOver={() => this.changeImage(Image2)}>Websites & Digital Platforms</h1>
-								<h1>eCommerce Experiences</h1>
-								<h1>Performance Marketing</h1>
-							</div>
-						</BackgroundImage> */}
-
 						<img
-							src={this.state.image}
-							style={{ backgroundImage: `url(${this.state.image})` }}
+							src={this.image}
+							style={{ backgroundImage: `url(${this.image})` }}
 							className="img-fluid Image"
 							alt="cover"
 						/>
 						<div className="Headings ">
-							<h4 className="text-muted">What We Do</h4>
-							<h1 onMouseOver={() => this.changeImage(Branding)}>Branding and Identity</h1>
-							<h1 onMouseOver={() => this.changeImage(Website)}>Websites and Digital Platform</h1>
-							<h1 onMouseOver={() => this.changeImage(App)}>Mobile App Development</h1>
-							<h1 onMouseOver={() => this.changeImage(Ecommerce)}>Ecommerce Experience</h1>
-							<h1 onMouseOver={() => this.changeImage(Marketing)}>Performance Marketing</h1>
+							<h4 className="text-muted ">What We Do</h4>
+							<h1 onMouseOver={() => this.changeImage(Website)} onClick={() => this.openPage('web')}>
+								Websites and Digital Platform
+							</h1>
+							<h1
+								onMouseOver={() => this.changeImage(Branding)}
+								onClick={() => this.openPage('branding')}
+							>
+								Branding and Identity
+							</h1>
+
+							<h1 onMouseOver={() => this.changeImage(App)} onClick={() => this.openPage('mobile')}>
+								Mobile App Development
+							</h1>
+							<h1
+								onMouseOver={() => this.changeImage(Ecommerce)}
+								onClick={() => this.openPage('ecommerce')}
+							>
+								Ecommerce Experience
+							</h1>
+							<h1
+								onMouseOver={() => this.changeImage(Marketing)}
+								onClick={() => this.openPage('marketing')}
+							>
+								Performance Marketing
+							</h1>
 						</div>
 					</div>
 				</div>
@@ -52,4 +67,4 @@ class Services extends React.Component {
 	}
 }
 
-export default Services;
+export default withRouter(Services);

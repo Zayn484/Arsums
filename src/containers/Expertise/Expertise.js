@@ -1,7 +1,9 @@
 import React from 'react';
 
-import Cover from '../../components/Cover/Cover';
+import BannerImg from '../../assets/images/banner/expertise.png';
 import Expertises from '../../components/Expertise/Expertise';
+import Request from '../../components/Request/Request';
+import Banner from '../../components/Banner/Banner';
 
 class Expertise extends React.Component {
 	componentDidMount() {
@@ -18,15 +20,16 @@ class Expertise extends React.Component {
 							top: 0,
 							left: 0,
 							width: '100%',
-							height: 'auto'
+							height: '50vh'
 						}}
 					>
-						<Cover>What We Do & Love</Cover>
+						<Banner banner={BannerImg} />
 					</div>
 				</section>
 				<section className="container-fluid Expertise-Intro p-0 ">
 					<Expertises />
 				</section>
+				<Request />
 			</main>
 		);
 	}

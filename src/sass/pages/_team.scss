@@ -1,0 +1,25 @@
+.Team {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+
+	& > div > .Banner {
+		margin-top: 5rem;
+		height: auto;
+	}
+}
+
+.Team-Section {
+	margin-top: 9rem;
+	transform: skewY(-1.5deg);
+
+	& > section > div {
+		transform: skewY(1.5deg);
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.Team-Section {
+		margin-top: 0;
+	}
+}

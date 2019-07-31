@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MaleImage from '../../assets/images/hiring/male.png';
 import FemaleImage from '../../assets/images/hiring/female.png';
 import Button from '../Button/Button';
@@ -19,7 +20,11 @@ const hiring = (props) => (
 							<img src={MaleImage} className="img-fluid " alt="male " />
 						</div>
 						<div className="text-center">
-							<Button>Learn More</Button>
+							<Button>
+								<Link to="/careers" className="text-white">
+									Learn More
+								</Link>
+							</Button>
 						</div>
 					</div>
 				</div>
@@ -30,7 +35,11 @@ const hiring = (props) => (
 							<img src={FemaleImage} className="img-fluid  " alt="female " />
 						</div>
 						<div className="text-center">
-							<Button>Learn More</Button>
+							<Button>
+								<Link to="/careers" className="text-white">
+									Learn More
+								</Link>
+							</Button>
 						</div>
 					</div>
 				</div>

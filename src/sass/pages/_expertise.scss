@@ -12,3 +12,9 @@
 .Expertise-Intro {
 	margin-top: 7rem;
 }
+
+@media screen and (max-width: 660px) {
+	.Expertise-Intro {
+		margin-top: 0;
+	}
+}

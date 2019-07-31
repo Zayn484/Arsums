@@ -33,25 +33,12 @@ class Layout extends Component {
 		this.setState({ toolbarOpen: !this.state.toolbarOpen });
 	};
 
-	click(e) {
-		console.log('_onMouseMove');
-	}
+	click(e) {}
 
 	showModal = () => {
 		this.setState({
-			visible: true
+			visible: !this.state.visible
 		});
-	};
-
-	handleOk = () => {
-		this.setState({ loading: true });
-		setTimeout(() => {
-			this.setState({ loading: false, visible: false });
-		}, 1000);
-	};
-
-	handleCancel = () => {
-		this.setState({ visible: false });
 	};
 
 	render() {
@@ -60,7 +47,7 @@ class Layout extends Component {
 				<Navbar scrolling={this.state.scrolling} showModal={this.showModal} />
 
 				{this.props.children}
-				<ScheduleCall visible={this.state.visible} onOk={this.handleOk} handleCancel={this.handleCancel} />
+				<ScheduleCall visible={this.state.visible} toggleModal={this.showModal} />
 				<Footer />
 			</div>
 		);

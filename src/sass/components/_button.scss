@@ -1,14 +1,18 @@
 .Btn {
-	background-color: #29323c;
+	border: 1px solid $color-primary;
 	border-radius: 20px;
-	color: white;
+	background-color: transparent;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 1rem;
+	color: black;
 	-moz-transition: all .4s ease-in-out;
 	-o-transition: all .4s ease-in-out;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
 
 	&:hover {
-		background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+		background-image: linear-gradient(to right, $color-primary, $color-primary-dark, $color-primary-dark);
 		box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 		background-position: 100% 0;
 		-moz-transition: all .4s ease-in-out;

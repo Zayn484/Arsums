@@ -1,0 +1,67 @@
+.Expertise-Detail {
+	height: 60vh;
+	overflow: hidden;
+	position: relative;
+
+	& > div > div > div > .Image {
+		width: 100%;
+		margin-top: 5rem;
+		height: 50vh;
+		position: absolute;
+	}
+
+	& > div > div > div > .Headings {
+		position: relative;
+
+		margin-top: 15rem;
+
+		z-index: 99 !important;
+
+		& h1 {
+			font-weight: 600;
+			font-size: 3rem;
+		}
+	}
+}
+
+.Detail {
+	background-color: #eee;
+	transform: skewY(-1.5deg);
+
+	& > div {
+		transform: skewY(1.5deg);
+		padding: 1rem;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.Expertise-Detail {
+		height: 100vh;
+
+		& > div > div > div > .Image {
+			margin-top: 5rem;
+
+			height: 80%;
+		}
+		& > div > div > div > .Headings {
+			margin-top: 10rem;
+		}
+	}
+}
+
+.Title {
+	color: $color-primary-dark;
+
+	& > div {
+		height: 3px;
+		background-color: $color-primary-dark;
+	}
+}
+
+.Content {
+	font-size: 1.2rem;
+}
+
+.Loading {
+	margin: 0 auto;
+}

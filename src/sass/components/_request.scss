@@ -10,7 +10,7 @@
 	}
 
 	& > div {
-		padding: 4rem;
+		padding: 2rem;
 		transform: skewY(1.5deg);
 
 		& > div {
@@ -20,7 +20,11 @@
 }
 
 .Input-Group {
-	margin-left: 1.5rem;
+	margin-left: .8rem;
+
+	& > .Heading {
+		font-size: 3vh;
+	}
 
 	& > div {
 		padding: 1rem;
@@ -34,5 +38,17 @@
 		border-left: 0;
 		border-top: 0;
 		border-right: 0;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.Input-Group {
+		& > div {
+			padding: 0;
+		}
+
+		& > div > label > span {
+			font-size: .9rem;
+		}
 	}
 }

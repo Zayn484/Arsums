@@ -1,13 +1,17 @@
 import React from 'react';
 
+import { Link } from 'react-scroll';
+
+import Banner from '../../assets/images/banner/portfolio.png';
 import Sparky from '../../assets/images/portfolio/sparky.jpg';
 import Atom from '../../assets/images/portfolio/atom.jpg';
 import Liefer from '../../assets/images/portfolio/liefer.jpg';
 import Sooper from '../../assets/images/portfolio/sooper.jpg';
 import Speedsy from '../../assets/images/portfolio/speedsy.jpg';
+import Join from '../../assets/images/portfolio/join.png';
 
-import Cover from '../../components/Cover/Cover';
 import Modal from '../../components/UI/Modal/Modal';
+import Request from '../../components/Request/Request';
 
 class Portfolio extends React.Component {
 	state = {
@@ -76,10 +80,16 @@ class Portfolio extends React.Component {
 							top: 0,
 							left: 0,
 							width: '100%',
-							height: 'auto'
+							height: '50vh'
 						}}
 					>
-						<Cover />
+						<div className="container-fluid d-flex h-100  Banner ">
+							<div className="row justify-content-center align-self-center  mx-auto">
+								<div className="col-12 ">
+									<img src={Banner} className="img-fluid" alt="banner" />
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 
@@ -144,6 +154,24 @@ class Portfolio extends React.Component {
 										<h4>Liefer</h4>
 									</div>
 								</div>
+								<div className="col-md-4 col-sm-6 portfolio-item mx-auto mt-3">
+									<a
+										className="portfolio-link"
+										data-toggle="modal"
+										href="#portfolioModal1"
+										onClick={() => this.showModal('speedsy')}
+									>
+										<div className="portfolio-hover">
+											<div className="portfolio-hover-content  ">
+												<i className="fas fa-plus fa-3x" />
+											</div>
+										</div>
+										<img className="img-fluid " src={Speedsy} alt="speedsy" />
+									</a>
+									<div className="portfolio-caption  bg-transparent">
+										<h4>Speedsy</h4>
+									</div>
+								</div>
 
 								<div className="col-md-4 col-sm-6 portfolio-item mx-auto mt-3 ">
 									<a
@@ -163,22 +191,19 @@ class Portfolio extends React.Component {
 										<h4>SooperChef</h4>
 									</div>
 								</div>
+
 								<div className="col-md-4 col-sm-6 portfolio-item mx-auto mt-3">
-									<a
-										className="portfolio-link"
-										data-toggle="modal"
-										href="#portfolioModal1"
-										onClick={() => this.showModal('speedsy')}
-									>
+									<Link to="Request" className="portfolio-link" spy={true} smooth={true}>
 										<div className="portfolio-hover">
 											<div className="portfolio-hover-content  ">
 												<i className="fas fa-plus fa-3x" />
 											</div>
 										</div>
-										<img className="img-fluid " src={Speedsy} alt="speedsy" />
-									</a>
+										<img className="img-fluid " src={Join} alt="join" />
+									</Link>
+
 									<div className="portfolio-caption  bg-transparent">
-										<h4>Speedsy</h4>
+										<h4>This can be You!</h4>
 									</div>
 								</div>
 							</div>
@@ -186,6 +211,8 @@ class Portfolio extends React.Component {
 						<br />
 					</section>
 				</section>
+
+				<Request />
 
 				<Modal title={this.state.title} content={this.state.content} image={this.state.image} />
 			</main>

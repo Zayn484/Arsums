@@ -10,16 +10,20 @@
     "moment-timezone": "^0.5.26",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
-    "react-background-image": "^1.2.0",
+    "react-country-region-selector": "^1.4.3",
     "react-dom": "^16.8.6",
+    "react-loading": "^2.0.3",
     "react-particles-js": "^2.6.0",
     "react-particles-webgl": "^1.0.4",
+    "react-phone-input-2": "^2.9.4",
     "react-reveal": "^1.2.2",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-scroll": "^1.7.12",
-    "react-water-wave": "^1.0.4"
+    "react-timekeeper": "^1.1.0",
+    "react-water-wave": "^1.0.4",
+    "validator": "^11.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

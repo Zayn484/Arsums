@@ -26,7 +26,8 @@
 
 .footer-distributed h3 {
 	color: #ffffff;
-	font: normal 36px 'Cookie', cursive;
+
+	font: normal 36px;
 	margin: 0;
 }
 
@@ -165,6 +166,5 @@
 
 @media (max-width: 760px) {
 	.footer-distributed {
-		margin-top: 35rem;
 	}
 }

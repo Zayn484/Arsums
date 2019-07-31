@@ -22,7 +22,7 @@ export default (props) => (
 								value: [ '#858585' ]
 							},
 							number: {
-								value: 120
+								value: 130
 							},
 							size: {
 								value: 4
@@ -59,7 +59,7 @@ export default (props) => (
 								},
 								repulse: {
 									size: 100,
-									distance: 160,
+									distance: 120,
 									duration: 14
 								},
 								push: {

@@ -10,7 +10,7 @@
 	}
 
 	& > div {
-		padding: 4rem;
+		padding: 1rem;
 		transform: skewY(1.5deg);
 
 		& > div {
@@ -20,19 +20,19 @@
 
 	& > div > div > .Card {
 		margin: 2rem;
-
+		cursor: pointer;
 		& div {
 			margin: 1rem;
 			border-radius: 20px;
-			background-color: #f2f4f7;
+			background-image: linear-gradient(to bottom right, #f2994a, #f2c94c);
 			padding: 1px;
 
 			& h4 {
 			}
 		}
 
-		& ul {
-			list-style-type: none;
+		&:hover {
+			box-shadow: 0 .2rem .4rem #ccc;
 		}
 	}
 }

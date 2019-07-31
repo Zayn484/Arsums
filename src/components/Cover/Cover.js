@@ -6,7 +6,7 @@ import Logo from '../../assets/images/brand.png';
 const cover = (props) => (
 	<div className="container-fluid d-flex h-100  Cover ">
 		<div className="row justify-content-center align-self-center  mx-auto">
-			<div className="col-3 mt-5  ">
+			<div className="col-8 col-md-3 mt-5  ">
 				<Pulse>
 					<img src={Logo} className="img-fluid" alt="logo" />
 				</Pulse>

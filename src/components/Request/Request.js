@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { Timeline, Radio, Input, Modal } from 'antd';
+import validator from 'validator';
+import { HOST_URL } from '../../settings';
 import Button from '../Button/Button';
 
 import Yesterday from '../../assets/images/request/yesterday.png';
@@ -47,6 +49,32 @@ class Request extends React.Component {
 	};
 
 	submit = () => {
+		// Validating fields
+		if (this.state.email !== null && !validator.isEmail(this.state.email)) {
+			Modal.error({
+				title: 'Request failed',
+				content: (
+					<div>
+						<p>Please use a valid email address</p>
+					</div>
+				),
+				onOk() {}
+			});
+			return;
+		}
+		if (this.state.projectDescription === null) {
+			Modal.error({
+				title: 'Request failed',
+				content: (
+					<div>
+						<p>Please fill out project description field</p>
+					</div>
+				),
+				onOk() {}
+			});
+			return;
+		}
+
 		const data = {
 			project_type: this.state.projectType,
 			project_description: this.state.projectDescription,
@@ -56,10 +84,16 @@ class Request extends React.Component {
 		};
 
 		axios
-			.post('http://127.0.0.1:8000/api/requests/', data)
+			.post(`${HOST_URL}/requests/`, data)
 			.then((response) => {
 				if (response.status === 201) {
-					this.setState({ submit: true, disabled: true });
+					this.setState({
+						submit: true,
+						disabled: true,
+						projectDescription: null,
+						username: null,
+						email: null
+					});
 				}
 			})
 			.catch((error) => {
@@ -77,9 +111,9 @@ class Request extends React.Component {
 
 	render() {
 		return (
-			<section className="container-fluid Request">
+			<section className="container-fluid Request" style={this.props.style}>
 				<div className="container  ">
-					<div className="Heading">
+					<div className="Heading col-12">
 						<h1 className="text-center ">Life is short. Work with us.</h1>
 					</div>
 
@@ -88,25 +122,43 @@ class Request extends React.Component {
 							<Timeline>
 								<Timeline.Item>
 									<div className="Input-Group">
-										<h3 className="text-muted ">How can we help you?</h3>
+										<h3 className="text-muted Heading">How can we help you?</h3>
 										<Radio.Group
+											className=" p-0 "
 											onChange={(e) => this.onChange(e, 'projectType')}
 											value={this.state.projectType}
 										>
-											<Radio value={'eCommerce'}>eCommerce</Radio>
-											<Radio value={'Web Design'}>Web Design</Radio>
-											<Radio value={'Web Development'}>Web Development</Radio>
-											<Radio value={'New Website'}>New Website</Radio>
-											<Radio value={'Existing Website'}>Existing Website</Radio>
+											<Radio value={'Branding'} className="col-12">
+												Branding
+											</Radio>
+											<Radio value={'UI/UX Design'} className="col-12">
+												UI/UX Design
+											</Radio>
+											<Radio value={'Mobile App Development'} className="col-12">
+												Mobile App Development
+											</Radio>
+											<Radio value={'SEO'} className="col-12">
+												SEO
+											</Radio>
+											<Radio value={'E-Commerce'} className="col-12">
+												E-Commerce
+											</Radio>
+											<Radio value={'IT Startups and Consulting'} className="col-12">
+												IT Startups and Consulting
+											</Radio>
+											<Radio value={' Web Development'} className="col-12">
+												Web Development
+											</Radio>
 										</Radio.Group>
 									</div>
 								</Timeline.Item>
 								<Timeline.Item>
 									<div className="Input-Group">
-										<h3 className="text-muted ">Describe project</h3>
+										<h3 className="text-muted Heading">Describe project</h3>
 										<TextArea
 											style={{ backgroundColor: 'transparent' }}
 											className="Input"
+											value={this.state.projectDescription}
 											rows={4}
 											onChange={(e) => this.onChange(e, 'projectDescription')}
 										/>
@@ -114,33 +166,33 @@ class Request extends React.Component {
 								</Timeline.Item>
 								<Timeline.Item>
 									<div className="Input-Group">
-										<h3 className="text-muted ">How urgent do you need it?</h3>
+										<h3 className="text-muted Heading">How urgent do you need it?</h3>
 										<Radio.Group
 											onChange={(e) => this.onChange(e, 'duration')}
 											value={this.state.duration}
 										>
-											<Radio value={'Yesterday'}>
+											<Radio value={'Yesterday'} className="m-4">
 												<div style={{ width: '80px', height: '80px' }}>
 													<img className="img-fluid" src={Yesterday} alt="Yesterday" />
 												</div>
 												Yesterday
 											</Radio>
-											<Radio value={'Today'}>
+											<Radio value={'Today'} className="m-4">
 												<div style={{ width: '80px', height: '80px' }}>
 													<img className="img-fluid" src={Today} alt="Today" />
 												</div>Today
 											</Radio>
-											<Radio value={'Tomorrow'}>
+											<Radio value={'Tomorrow'} className="m-4">
 												<div style={{ width: '80px', height: '80px' }}>
 													<img className="img-fluid" src={Tomorrow} alt="Tomorrow" />
 												</div>Tomorrow
 											</Radio>
-											<Radio value={'Within a week'}>
+											<Radio value={'Within a week'} className="m-4">
 												<div style={{ width: '80px', height: '80px' }}>
 													<img className="img-fluid" src={Week} alt="Week" />
 												</div>Within a week
 											</Radio>
-											<Radio value={'Within a month'}>
+											<Radio value={'Within a month'} className="m-4">
 												<div style={{ width: '80px', height: '80px' }}>
 													<img className="img-fluid" src={Month} alt="Month" />
 												</div>Within a month
@@ -150,17 +202,19 @@ class Request extends React.Component {
 								</Timeline.Item>
 								<Timeline.Item>
 									<div className="Input-Group">
-										<h3 className="text-muted ">Contact information</h3>
+										<h3 className="text-muted Heading">Contact information</h3>
 										<Input
 											style={{ backgroundColor: 'transparent' }}
 											placeholder="Your name"
-											className="col-3 m-3 Input"
+											value={this.state.username}
+											className="col-12 col-md-3 m-3 Input"
 											onChange={(e) => this.onChange(e, 'username')}
 										/>
 										<Input
 											style={{ backgroundColor: 'transparent' }}
 											placeholder="Your email"
-											className="col-3 m-3 Input"
+											value={this.state.email}
+											className="col-12 col-md-3 m-3 Input"
 											onChange={(e) => this.onChange(e, 'email')}
 										/>
 									</div>
@@ -179,16 +233,6 @@ class Request extends React.Component {
 								</Timeline.Item>
 							</Timeline>
 						</div>
-						{/* <div className="col-10">
-							<h3 className="text-muted ">How can we help you?</h3>
-							<Radio.Group onChange={this.onChange} value={this.state.value}>
-								<Radio value={'eCommerce'}>eCommerce</Radio>
-								<Radio value={'Web Design'}>Web Design</Radio>
-								<Radio value={'Web Development'}>Web Development</Radio>
-								<Radio value={'New Website'}>New Website</Radio>
-								<Radio value={'Existing Website'}>Existing Website</Radio>
-							</Radio.Group>
-						</div> */}
 					</div>
 				</div>
 			</section>

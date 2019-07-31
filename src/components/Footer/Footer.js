@@ -2,9 +2,13 @@ import React from 'react';
 
 const footer = (props) => (
 	<footer className="container-fluid footer-distributed">
-		<div className="footer-left">
+		<div className="footer-left mt-3">
 			<h3>Arsums Tech</h3>
 
+			<h5 className="text-white mt-4 mb-5" style={{ textTransform: 'capitalize' }}>
+				Wonderful <span style={{ color: '#fbbc17', fontSize: '1.8rem' }}>digital things</span> <br /> and a
+				pinch of <span style={{ color: '#fbbc17', fontSize: '1.8rem' }}>rock n' roll</span>
+			</h5>
 			<p className="footer-company-name">Arsums &copy; 2019</p>
 		</div>
 
@@ -14,7 +18,7 @@ const footer = (props) => (
 			<div>
 				<i className="fa fa-map-marker" />
 				<p>
-					<span>2nd Building, adjacent Aslam Medical Complex, Defence Road</span> Silakot, Pakistan
+					<span>Adjacent Aslam Medical Complex, Defence Road</span> Sialkot, Pakistan
 				</p>
 			</div>
 
@@ -25,9 +29,7 @@ const footer = (props) => (
 
 			<div>
 				<i className="fa fa-envelope" />
-				<p>
-					<a href="mailto:support@company.com">info@arsums.com</a>
-				</p>
+				<p>info@arsums.com</p>
 			</div>
 		</div>
 	</footer>

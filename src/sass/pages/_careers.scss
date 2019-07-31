@@ -1,0 +1,25 @@
+.Careers {
+	position: relative;
+	width: 100%;
+	height: 50vh;
+
+	& .Cover {
+		margin-top: 8rem;
+		background-color: #ededed;
+	}
+}
+
+.Careers-Intro {
+	margin-top: 1.5rem;
+	background-color: #f8f9fa;
+
+	& p {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.Careers-Intro {
+		margin-top: 0;
+	}
+}

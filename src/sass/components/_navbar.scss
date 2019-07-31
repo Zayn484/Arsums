@@ -1,0 +1,46 @@
+.Navbar {
+	z-index: 999 !important;
+
+	position: fixed;
+	background-color: transparent;
+	transition: 0.5s;
+}
+
+.Navbar-Scroll {
+	z-index: 999 !important;
+	position: fixed;
+	background-color: white;
+	-webkit-box-shadow: 1px 2px 3px 3px #eee;
+	-moz-box-shadow: 1px 2px 3px 3px #eee;
+	box-shadow: 1px 2px 3px 3px #eee;
+	transition: 0.5s;
+}
+
+.Logo {
+	opacity: 1;
+	transition: visibility 0s, opacity 0.2s linear;
+}
+
+.Logo-Scroll {
+	opacity: 0;
+	transition: visibility 0s, opacity 0.2s linear;
+}
+
+.Nav-Container ul li a {
+	margin: 1rem;
+	color: #606161;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+
+.Nav-Container ul li a:hover,
+.Nav-Container ul li a:active {
+	color: #fbbc17;
+}
+
+@media screen and (max-width: 1024px) {
+	.Navbar {
+		background-color: white;
+	}
+}
